@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="./static/styles.css" rel="stylesheet">
+        <link href="../app.py">
+        <title>Schedule</title>
+    </head>
+    <body>
+        {% include 'header.html' %}
+        {% block content %}
+      
+        <div class="header">
+            <h1 class="h1_schedule">Schedule</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add schedule</h2>
+                <form action="" method="post">
+                    <input name="text" placeholder="Text" type="text">
+                    <input name="data" placeholder="Data" type="datetime" min="00:00" max="24:00">
+                    <input type="submit" value="Add schedule"> 
+                </form>
+            </div>
+            <br><br>
+
+            <div class="section">
+
+                <h2>All schedule</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Text</th>
+                            <th>Schedule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for schedule in schedule %}
+                            <tr>
+                                <td>{{ schedule.text }}</td>
+                                <td>{{ schedule.data }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
+{% include 'footer.html'%}

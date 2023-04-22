@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading time</title>
+    <link href="./static/style.css" rel="stylesheet">
+</head>
+<body onload="carregar()">
+    <header>
+        {% include 'header.html'%}
+        {% block content %}
+
+        <br>
+        <h2 class="h2_motivation">Motivational phrases and tips to make the most of your day</h2>
+        <br>
+       <h3 class="h3_motivation"><q>Life is like riding a bicycle. To keep your balance you must keep moving.</q>--Albert Einstein </h3>
+       <br>
+    </header>
+    <section class="sectiion_mativation">
+        <div class="div_motivation" id="msg">
+
+        </div>
+        <div id="foto">
+            <img id="imagen" src="${hour}" alt="imgtime">        
+        </div>
+    </section>
+    <script src="../static/server.js"></script>
+   
+    {% endblock %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        {% include 'footer.html' %}
+
+
+</body>
+</html>
+
